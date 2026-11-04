@@ -16,9 +16,9 @@ configuration:
     fontOrigin: googleFonts
     cdnCaching: true
     typography:
-      header: Schibsted Grotesk
-      body: Source Sans Pro
-      code: IBM Plex Mono
+      header: "Inter"
+      body: "Source Sans 3"
+      code: "JetBrains Mono"
     colors:
       lightMode:
         light: "#faf8f8"
@@ -160,9 +160,11 @@ plugins:
       priority: 10
   - source: "@quartz-community/content-meta"
     enabled: true
+    options:
+        showReadingTime: false
     layout:
-      position: beforeBody
-      priority: 20
+        position: beforeBody
+        priority: 20
   - source: "@quartz-community/tag-list"
     enabled: false
     layout:

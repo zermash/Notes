@@ -1,3 +1,234 @@
 @use "./variables.scss" as *;
+article {
+  font-size: 18px;
+  line-height: 1.85;
+  letter-spacing: 0.005em;
+  overflow-wrap: break-word;
+}
+article > p,
+article > ul,
+article > ol,
+article > blockquote {
+  max-width: 72ch;
+}
+article p {
+  margin-top: 0.8em;
+  margin-bottom: 1.15em;
+}
+article h1,
+article h2,
+article h3 {
+  line-height: 1.3;
+  letter-spacing: -0.015em;
+  font-weight: 650;
+  margin-top: 1.8em;
+  margin-bottom: 0.7em;
+}
+article h1 {
+  font-size: 2em;
+}
+article h2 {
+  font-size: 1.5em;
+  border-bottom: 1px solid var(--lightgray);
+  padding-bottom: 0.35em;
+}
+article h3 {
+  font-size: 1.2em;
+}
+/* Удобные списки */
+article li {
+  margin-bottom: 0.5em;
+  line-height: 1.75;
+}
+article pre {
+  font-size: 0.85em;
+  line-height: 1.6;
+  border-radius: 10px;
+  padding: 1.2rem;
+  overflow-x: auto;
+}
+article .katex-display {
+  margin: 1.5em 0;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+@media (max-width: 800px) {
+  article {
+    font-size: 16px;
+    line-height: 1.75;
+  }
+  article h1 {
+    font-size: 1.7em;
+  }
+  article h2 {
+    font-size: 1.35em;
+  }
+}
 
-// put your custom CSS here!
+/* ======================================
+   КАРТОЧКИ ПРЕДМЕТОВ
+   ====================================== */
+
+
+/* Сетка карточек */
+.subject-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  margin: 24px 0 32px;
+}
+
+article a.subject-card,
+article a.subject-card:visited {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  text-align: left;
+
+  position: relative;
+  box-sizing: border-box;
+  min-width: 0;
+  min-height: 165px;
+  padding: 20px;
+
+  background-color: #202020 !important;
+  color: #eeeeee !important;
+  border: 1px solid #383838;
+  border-radius: 14px;
+
+  text-decoration: none;
+  transition: border-color 0.2s, transform 0.2s;
+}
+
+article a.subject-card:hover {
+  background-color: #282828 !important;
+  border-color: #777777;
+  transform: translateY(-2px);
+}
+
+article .subject-icon {
+  display: block;
+  width: auto;
+  margin: 0 0 14px;
+  text-align: left;
+  font-size: 26px;
+  line-height: 1;
+}
+
+article .subject-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  flex: 1;
+  gap: 6px;
+  width: 100%;
+  text-align: left;
+}
+
+article .subject-info strong {
+  color: #eeeeee;
+  font-size: 16px;
+  line-height: 1.4;
+}
+
+article .subject-info small {
+  color: #aaaaaa;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+article .subject-arrow {
+  align-self: flex-end;
+  color: #aaaaaa;
+  font-size: 24px;
+  line-height: 1;
+}
+
+/* Телефоны */
+@media (max-width: 600px) {
+  .subject-list {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  article a.subject-card {
+    min-height: 130px;
+    padding: 16px;
+  }
+}
+
+/* Эффект при наведении */
+a.subject-card:hover {
+  background: var(--lightgray);
+  border-color: var(--secondary);
+  transform: translateY(-2px);
+}
+
+/* Иконка */
+.subject-icon {
+  width: 28px;
+  flex-shrink: 0;
+  text-align: center;
+
+  font-size: 24px;
+  color: var(--dark);
+}
+
+/* Текст карточки */
+.subject-info {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 0;
+  gap: 5px;
+}
+
+.subject-info strong {
+  font-size: 16px;
+  font-weight: 650;
+  line-height: 1.3;
+  color: var(--dark);
+}
+
+.subject-info small {
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--darkgray);
+}
+
+/* Стрелка справа */
+.subject-arrow {
+  flex-shrink: 0;
+  font-size: 28px;
+  font-weight: 300;
+  color: var(--darkgray);
+  transition: transform 0.2s ease;
+}
+
+a.subject-card:hover .subject-arrow {
+  transform: translateX(4px);
+  color: var(--secondary);
+}
+
+/* Удобство для телефона */
+@media (max-width: 600px) {
+  a.subject-card {
+    padding: 15px 14px;
+    gap: 12px;
+    min-height: 72px;
+  }
+
+  .subject-icon {
+    width: 24px;
+    font-size: 21px;
+  }
+
+  .subject-info strong {
+    font-size: 15px;
+  }
+
+  .subject-info small {
+    font-size: 12px;
+  }
+}
