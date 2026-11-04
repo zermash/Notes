@@ -7,7 +7,7 @@ configuration:
   analytics:
     provider: plausible
   locale: en-US
-  baseUrl: zermash.github.io/Physics
+  baseUrl: zermash.github.io/Notes
   ignorePatterns:
     - private
     - templates
