@@ -8,7 +8,7 @@ title: Главная
 
 <div class="subject-list">
 
-  <a class="subject-card" href="/Notes/для-записи-лекций/физика">
+  <a class="subject-card" href="./для-записи-лекций/физика">
     <span class="subject-icon">⚛</span>
     <span class="subject-info">
       <strong>Физика</strong>
@@ -17,7 +17,7 @@ title: Главная
     <span class="subject-arrow">›</span>
   </a>
 
-  <a class="subject-card" href="/Notes/для-записи-лекций/мат-ан/">
+  <a class="subject-card" href="./для-записи-лекций/мат-ан/">
     <span class="subject-icon">∑</span>
     <span class="subject-info">
       <strong>Математический анализ</strong>
@@ -26,7 +26,7 @@ title: Главная
     <span class="subject-arrow">›</span>
   </a>
 
-  <a class="subject-card" href="/Notes/для-записи-лекций/ан-гем/">
+  <a class="subject-card" href="./для-записи-лекций/ан-гем/">
     <span class="subject-icon">⌗</span>
     <span class="subject-info">
       <strong>Аналитическая геометрия</strong>
@@ -35,7 +35,7 @@ title: Главная
     <span class="subject-arrow">›</span>
   </a>
 
-  <a class="subject-card" href="/Notes/для-записи-лекций/информатика/">
+  <a class="subject-card" href="./для-записи-лекций/информатика/">
     <span class="subject-icon">⌘</span>
     <span class="subject-info">
       <strong>Информатика</strong>
