@@ -65,170 +65,106 @@ article .katex-display {
   }
 }
 
-/* ======================================
-   КАРТОЧКИ ПРЕДМЕТОВ
-   ====================================== */
 
 
-/* Сетка карточек */
-.subject-list {
-  display: grid;
+/* ===================================
+   ПЛИТКИ ПРЕДМЕТОВ
+   =================================== */
+
+/* Сетка */
+article h2 + ul {
+  display: grid !important;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 16px;
+  padding: 0 !important;
   margin: 24px 0 32px;
+  list-style: none;
 }
 
-article a.subject-card,
-article a.subject-card:visited {
-  display: flex;
+/* Основа каждой карточки */
+article h2 + ul > li {
+  display: flex !important;
   flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
-  text-align: left;
-
-  position: relative;
-  box-sizing: border-box;
   min-width: 0;
-  min-height: 165px;
-  padding: 20px;
-
-  background-color: #202020 !important;
-  color: #eeeeee !important;
-  border: 1px solid #383838;
+  min-height: 170px;
+  margin: 0 !important;
+  padding: 0 !important;
+  list-style: none !important;
   border-radius: 14px;
-
-  text-decoration: none;
-  transition: border-color 0.2s, transform 0.2s;
+  background: #242424 !important;
+  border: 1px solid #444 !important;
+  overflow: hidden;
+  transition: background 0.2s, transform 0.2s;
 }
 
-article a.subject-card:hover {
-  background-color: #282828 !important;
-  border-color: #777777;
+article h2 + ul > li:hover {
+  background: #303030 !important;
   transform: translateY(-2px);
 }
 
-article .subject-icon {
-  display: block;
-  width: auto;
-  margin: 0 0 14px;
-  text-align: left;
-  font-size: 26px;
-  line-height: 1;
+/* Убираем отступ у промежуточного абзаца */
+article h2 + ul > li > p {
+  display: flex;
+  flex: 1;
+  margin: 0 !important;
 }
 
+/* Ссылка занимает карточку */
+article h2 + ul > li a {
+  display: flex !important;
+  flex-direction: column;
+  align-items: flex-start;
+  flex: 1;
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+  text-decoration: none !important;
+  color: #eee !important;
+  background: transparent !important;
+}
+
+/* Название и описание */
 article .subject-info {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  flex: 1;
   gap: 6px;
-  width: 100%;
-  text-align: left;
+  margin-top: 10px;
 }
 
 article .subject-info strong {
-  color: #eeeeee;
+  color: #eee !important;
   font-size: 16px;
-  line-height: 1.4;
 }
 
 article .subject-info small {
-  color: #aaaaaa;
+  color: #aaa !important;
   font-size: 13px;
-  line-height: 1.5;
-}
-
-article .subject-arrow {
-  align-self: flex-end;
-  color: #aaaaaa;
-  font-size: 24px;
-  line-height: 1;
-}
-
-/* Телефоны */
-@media (max-width: 600px) {
-  .subject-list {
-    grid-template-columns: 1fr;
-    gap: 12px;
-  }
-
-  article a.subject-card {
-    min-height: 130px;
-    padding: 16px;
-  }
-}
-
-/* Эффект при наведении */
-a.subject-card:hover {
-  background: var(--lightgray);
-  border-color: var(--secondary);
-  transform: translateY(-2px);
 }
 
 /* Иконка */
-.subject-icon {
-  width: 28px;
-  flex-shrink: 0;
-  text-align: center;
-
-  font-size: 24px;
-  color: var(--dark);
+article .subject-icon {
+  font-size: 26px;
 }
 
-/* Текст карточки */
-.subject-info {
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-  min-width: 0;
-  gap: 5px;
+/* Стрелка внизу справа */
+article .subject-arrow {
+  align-self: flex-end;
+  margin-top: auto;
+  color: #aaa;
+  font-size: 26px;
 }
 
-.subject-info strong {
-  font-size: 16px;
-  font-weight: 650;
-  line-height: 1.3;
-  color: var(--dark);
-}
-
-.subject-info small {
-  font-size: 12px;
-  line-height: 1.5;
-  color: var(--darkgray);
-}
-
-/* Стрелка справа */
-.subject-arrow {
-  flex-shrink: 0;
-  font-size: 28px;
-  font-weight: 300;
-  color: var(--darkgray);
-  transition: transform 0.2s ease;
-}
-
-a.subject-card:hover .subject-arrow {
-  transform: translateX(4px);
-  color: var(--secondary);
-}
-
-/* Удобство для телефона */
+/* Мобильная версия */
 @media (max-width: 600px) {
-  a.subject-card {
-    padding: 15px 14px;
-    gap: 12px;
-    min-height: 72px;
+  article h2 + ul {
+    grid-template-columns: 1fr;
   }
 
-  .subject-icon {
-    width: 24px;
-    font-size: 21px;
+  article h2 + ul > li {
+    min-height: 130px;
   }
 
-  .subject-info strong {
-    font-size: 15px;
-  }
-
-  .subject-info small {
-    font-size: 12px;
+  article h2 + ul > li a {
+    padding: 16px;
   }
 }
